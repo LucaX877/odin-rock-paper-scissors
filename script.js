@@ -52,9 +52,21 @@ function playGame() {
     playRound();
     playRound();
 
-    if (computerScore === humanScore) console.log("Draw!");
-    else if (computerScore > humanScore) console.log("Computer wins!");
-    else console.log("Player wins!")
+    const para = document.createElement("p");
+
+    if (computerScore === humanScore) {
+        console.log("Draw!");
+        para.textContent = "Draw!";
+    } else if (computerScore > humanScore) {
+        console.log("Computer wins!");
+        para.textContent = "Computer wins!";
+    } else {
+        console.log("Player wins!")
+        para.textContent = "Player wins!";
+    }
+
+    const body = document.querySelector("body");
+    body.appendChild(para);
 }
 
 playGame();
